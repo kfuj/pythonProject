@@ -11,32 +11,69 @@ You can run the script in your Terminal at any time using the command:
 
 def add_to_list(my_list):
     """Takes user input and adds it as a new item to the end of the list."""
+    """
+    variable to store list
+    take user input
+    add new item to end list
 
-    print "The add_to_list function has not yet been written"
+    """
+    #choice = "Q"
+
+    new_task = raw_input('What new task do you want to add?')
+
+    my_list.append(new_task)
+    return my_list
+
+   
 
 
 def view_list(my_list):
     """Print each item in the list."""
+    for item in my_list:
+        print item
 
-    print "The view_list function has not yet been written"
+    
 
 
 def display_main_menu(my_list):
     """Displays main options, takes in user input, and calls view or add function."""
 
+
+
+    # if choose A then go to add list
+    # if choose B call function view_list
+    # if choose C then quit out of programuser_options:
+        
+       
     user_options = """
-    \nWould you like to:
-    A. Add a new item
-    B. View list
-    C. Quit the program
-    >>> """
+        \nWould you like to:
+        A. Add a new item
+        B. View list
+        C. Quit the program
+        >>> """
 
     while True:
-        # Collect input and include your if/elif/else statements here.
-        break
+        print user_options
+        choice = raw_input("what you want girl? ")
+        if choice == 'a':
+            add_to_list(my_list)
+        elif choice == 'b':
+            view_list(my_list)
+
+        elif choice == 'c':
+            break
+        else:
+            print "pick from the list"
+                
+
+
+
+    
 
 #-------------------------------------------------
 
-my_list = []
+my_list = ["coffee", "cookies"]
+# add_to_list(my_list)
 display_main_menu(my_list)
+
 
